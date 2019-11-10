@@ -98,7 +98,7 @@ exports.vote = async (req, res, next) => {
         return {
           option: option.option,
           _id: option._id,
-          votes: options.votes  + 1
+          votes: option.votes  + 1
         };
       } else {
       return option;
@@ -120,6 +120,6 @@ exports.vote = async (req, res, next) => {
   }
   } catch (err) {
     err.status = 400;
-    next(err)
+    next(err);
   }
 };
